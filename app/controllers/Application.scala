@@ -8,18 +8,19 @@ import models.User
 
 object Application extends Controller {
 
+  val rand = new Random()
+  var num1 : Int = 0
+  
   def index = Action {
-    val rand = new Random()
-    var num1 : Int = 0
-    var num2 : String = ""
+    
     var numSup : String = ""
-    rand.nextInt(2)
-    num2 = rand.toString()
+    num1 = rand.nextInt(9)
+    //num2 = rand.toString()
     
-    if (num1 > 1) numSup= "number > 1 "
-    else numSup = "num pas sup !!"
-    
-    Ok(views.html.index(numSup + num2))
+    if (num1 > 4) numSup= "number > 4 "
+    else numSup = "num < 4 !!"
+    println("someprintln");
+    Ok(views.html.index(numSup, num1))
   }
   
   

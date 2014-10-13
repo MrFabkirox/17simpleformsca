@@ -1,7 +1,30 @@
-@(message: String)
+@(message: String, num: Integer)
 
 @main("17simpleformsca") {
 
+	random number : @num<br />
     @message
+    
+    <table cellspacing="2px" rules="all" style="border:solid 1px black;">
+    <caption>Rand compare</caption>
+    <col style="width:200px">
+    <col style="width:200px">
+    
+    	<thead>
+    		<tr>
+    			<td style="text-align:center">Random Number</td>
+    			<td style="text-align:center">@num</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>compare to 4</td>
+    			<td>@message</td>
+    		</tr>
+    		
+    		<tr>
+    			<td colspan="2">';..;'</td>
+    		</tr>
+    	</thead>
+    </table>
 
 }
