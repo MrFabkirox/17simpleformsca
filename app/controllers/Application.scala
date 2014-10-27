@@ -28,5 +28,20 @@ object Application extends Controller {
     println("println");
     Ok(views.html.view2("17simpleformsca"))
   }
+  
+  def p3 = Action {
+    
+    var name1 : String = "Some use of the _ in the console"
+      
+    List(1, 2, 3) foreach println _
+    List(1, 2, 3) map (_ +2) foreach println _
+    List("a", "b") foreach { _ => println("print")}
+    List(5,6) foreach(a => println(a))
+    
+    List("foo", "bar", "baz").map(n => n.toUpperCase()) foreach (a => println(a))
+    List("foo", "bar").map(_.toUpperCase()) foreach (a => println(a))
+      
+    Ok(views.html.view3(name1))
+  }
 
 }
