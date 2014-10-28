@@ -6,6 +6,8 @@ import scala.util.Random
 import play.api.data.Form
 import models.User
 
+import java.util.regex
+
 object Application extends Controller {
 
   val rand = new Random()
@@ -31,7 +33,7 @@ object Application extends Controller {
   
   def p3 = Action {
     
-    var name1 : String = "Some use of the _ in the console"
+    var name1 : String = "Some use of the underscore in the console"
       
     List(1, 2, 3) foreach println _
     List(1, 2, 3) map (_ +2) foreach println _
@@ -40,6 +42,8 @@ object Application extends Controller {
     
     List("foo", "bar", "baz").map(n => n.toUpperCase()) foreach (a => println(a))
     List("foo", "bar").map(_.toUpperCase()) foreach (a => println(a))
+    
+    //name1.replaceAll(java.util.regex(""" e :"[A-Za-z]" """), "replacement") //ko
       
     Ok(views.html.view3(name1))
   }
